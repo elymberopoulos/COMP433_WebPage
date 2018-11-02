@@ -1,0 +1,31 @@
+html{
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(125deg, black, #3399ff);
+
+}
+body{
+  font-family: futura, arial;
+  background-repeat: no-repeat;
+  color: white;
+}
+.wrapper{
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: 75px;
+}
+.innerWrapper{
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: 75px;
+}
+.searchSection{
+  grid-column: 1/5;
+  grid-row: 1/7;
+  background-color: grey;
+}
+.searchSubSection{
+  grid-column: 1/5;
+  grid-row: 1/7;
+  background-color: black;
+}
