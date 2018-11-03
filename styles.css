@@ -8,7 +8,7 @@ html{
 body{
   font-family: futura, arial;
   background-repeat: no-repeat;
-  color: white;
+  color: black;
 }
 .wrapper{
   display:grid;
@@ -29,4 +29,44 @@ body{
   grid-column: 1/5;
   grid-row: 1/7;
   background-color: black;
+}
+/* Style the navigation bar */
+.navbar {
+ width: 100%;
+ background-color: #555;
+ overflow: auto;
+ position: fixed; /* Set the navbar to fixed position */
+ top: 0; /* Position the navbar at the top of the page */
+ left: 0;
+ width: 100%; /* Full width */
+}
+
+/* Navbar links */
+.navbar a {
+ float: left;
+ text-align: center;
+ padding: 12px;
+ color: white;
+ text-decoration: none;
+ font-size: 17px;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+ background-color: #000;
+}
+
+/* Current/active navbar link */
+.active {
+ background-color: #4CAF50;
+}
+
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+ .navbar a {
+   float: none;
+   display: block;
+ }
+
 }
