@@ -1,0 +1,7 @@
+html{
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(125deg, black, #3399ff);
+  background-image: url("res/image.jpg");
+
+}

@@ -1,10 +1,3 @@
-html{
-  height: 100%;
-  width: 100%;
-  background-image: linear-gradient(125deg, black, #3399ff);
-  background-image: url("res/image.jpg");
-
-}
 body{
   font-family: futura, arial;
   background-repeat: no-repeat;
@@ -33,7 +26,7 @@ body{
 /* Style the navigation bar */
 .navbar {
  width: 100%;
- background-color: #555;
+ background-color: black;
  overflow: auto;
  position: fixed; /* Set the navbar to fixed position */
  top: 0; /* Position the navbar at the top of the page */
@@ -53,7 +46,7 @@ body{
 
 /* Navbar links on mouse-over */
 .navbar a:hover {
- background-color: #000;
+ background-color: #555;
 }
 
 /* Current/active navbar link */
@@ -69,4 +62,42 @@ body{
    display: block;
  }
 
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Style the search field */
+form.searchbar input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+/* Style the submit button */
+form.searchbar button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #4CAF50;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+form.searchbar button:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+form.searchbar::after {
+  content: "";
+  clear: both;
+  display: table;
 }
