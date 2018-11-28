@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="addbook.css">
+        <link rel="stylesheet" href="background.css">
+    </head>
+    <body>
+        <div w3-include-html="navigation.html"></div>
+        <div w3-include-html="footer.html"></div>
+
+        <div style="margin-top:100px"></div>
+        <h3>Add a Book to our Library</h3>
+
+          <form action="/action_page.php">
+            <div class="container">
+            <label for="bname">Book Name</label>
+            <input type="text" id="ProductName" name="bookname" placeholder="Book Name">
+
+            <label for="bprice">Book Price</label>
+            <input type="number" id="ProductPrice" name="productprice" min="1" max="200" placeholder="$">
+
+            <label for="breview">Book Review</label>
+            <input type="text" id="Product Review" name="bookreview" placeholder="Add A Review">
+
+            <label for="oname">Product Owner</label>
+            <input type="text" id="ProductOwner" name="ownername" placeholder="Product Owner">
+
+            <label for="pid">Product ID</label>
+            <input type="integer" id="ProductID" name="productid" placeholder="Product ID">
+
+            <label for="isbn">ISBN</label>
+            <input type="integer" id="Isbn" name="isbn" placeholder="ISBN">
+
+             <label for="bauthor">Author</label>
+            <input type="text" id="Author" name="author" placeholder="Author Name">
+
+            <label for="category">Category</label>
+            <select id="Category" name="category">
+              <option value="fiction">Fiction</option>
+              <option value="nonfiction">Non-Fiction</option>
+              <option value="biography">Biography</option>
+            </select>
+
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+
+        <div style="margin-top:150px"></div>
+
+                <script src="js/main.js"></script>
+                <script>includeHTML();</script>
+    </body>
+</html>
