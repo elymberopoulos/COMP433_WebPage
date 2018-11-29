@@ -21,6 +21,6 @@ function createHTML(booksData) {
   var compiledTemplate = Handlebars.compile(rawTemplate);
   var ourGeneratedHTML = compiledTemplate(booksData);
 
-  var petsContainer = document.getElementById("books-container");
-  petsContainer.innerHTML = ourGeneratedHTML;
+  var bookContainer = document.getElementById("books-container");
+  booksContainer.innerHTML = ourGeneratedHTML;
 }
