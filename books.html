@@ -12,37 +12,43 @@
 
         <div class="page-wrap">
   <h1>Books</h1>
-  <div id="pets-container"></div>
+  <div id="books-container"></div>
 </div>
 
-<script id="petsTemplate" type="text/x-handlebars-template">
-{{#each pets}}
-  <div class="pet">
+<script id="booksTemplate" type="text/x-handlebars-template">
+{{#each books}}
+  <div class="book">
     <div class="photo-column">
       <img src="{{photo}}">
     </div>
 
     <div class="info-column">
-      <h2>{{name}} <span class="species">({{species}})</span></h2>
+      <h2>{{productName}} <span class="price">{{productPrice}}</span></h2>
 
-      <p>Age: {{calculateAge birthYear}}</p>
+      <h4 class="headline-bar">Book Information</h4>
+      <ul class="book-information">
+         <li>
+             <h4>Author: {{author}}</h4>
+             <h4>ISBN: {{isbn}}</h4>
+             <h4>Product Owner: {{productOwner}}</h4>
+             <h4>Product ID: {{productID}}</h4>
+             <h4>Category: {{category}}</h4>
+             <h4>Product Review: {{productReview}}</h4>
+         </li>
 
-      {{#if favFoods}}
-      <h4 class="headline-bar">Favorite Foods</h4>
-      <ul class="favorite-foods">
-        {{#each favFoods}}
-          <li>{{{this}}}</li>
-        {{/each}}
       </ul>
-      {{/if}}
+
 
     </div>
   </div>
-{{/each}}
+
 </script>
+
+<div style="margin-top:150px"></div>
+
+        <script src="js/handlebars-v4.0.12.js"></script>
         <script src="js/main.js"></script>
         <script src="js/books.js"></script>
-        <script src="js/handlebars-v4.0.12.js"></script>
         <script>includeHTML();</script>
     </body>
 </html>

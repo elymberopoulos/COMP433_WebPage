@@ -67,20 +67,20 @@ p {
   z-index: 10;
 }
 
-.book {
+.pet {
   background-color: #FFF;
   padding: 20px;
   margin-bottom: 20px;
   overflow: hidden;
 }
 
-.book h2 {
+.pet h2 {
   font-weight: normal;
   margin: 0;
   font-size: 2.5rem;
 }
 
-.book h2 .price {
+.pet h2 .species {
   font-size: 1.45rem;
   color: #999;
 }
@@ -91,13 +91,13 @@ p {
   padding: 8px 15px;
 }
 
-.book-information {
+.favorite-foods {
   background-color: #EFEFEF;
   padding: 0;
   margin: 0;
 }
 
-.book-information li {
+.favorite-foods li {
   list-style: none;
   border-bottom: 1px dotted #999;
   padding: 8px 15px;

@@ -1,5 +1,5 @@
 var ourRequest = new XMLHttpRequest();
-ourRequest.open('GET', 'https://learnwebcode.github.io/json-example/pets-data.json');
+ourRequest.open('GET', 'http://localhost:8081/book');
 ourRequest.onload = function() {
   if (ourRequest.status >= 200 && ourRequest.status < 400) {
     var data = JSON.parse(ourRequest.responseText);
@@ -15,22 +15,12 @@ ourRequest.onerror = function() {
 
 ourRequest.send();
 
-Handlebars.registerHelper("calculateAge", function(birthYear) {
-  var age = new Date().getFullYear() - birthYear;
 
-  if (age > 0) {
-    return age + " years old";
-  } else {
-    return "Less than a year old";
-  }
-
-});
-
-function createHTML(petsData) {
-  var rawTemplate = document.getElementById("petsTemplate").innerHTML;
+function createHTML(booksData) {
+  var rawTemplate = document.getElementById("booksTemplate").innerHTML;
   var compiledTemplate = Handlebars.compile(rawTemplate);
-  var ourGeneratedHTML = compiledTemplate(petsData);
+  var ourGeneratedHTML = compiledTemplate(booksData);
 
-  var petsContainer = document.getElementById("pets-container");
+  var petsContainer = document.getElementById("books-container");
   petsContainer.innerHTML = ourGeneratedHTML;
 }
