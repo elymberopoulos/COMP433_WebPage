@@ -5,7 +5,7 @@ $(document).ready(function () {
 
     var book_modal_template = Handlebars.compile(source);
 
-    var bookResourceURI= "http://localhost:8081/book"
+    var bookResourceURI = "http://localhost:8081/book"
     //http://localhost:8081/partner
 
     //retrieve all the employees from server then display them on the homepage
@@ -15,14 +15,14 @@ $(document).ready(function () {
         for (var i = 0; i < book.length; i++) {
 
             var bookData = {
-                ProductID: ""+book[i].ProductID,
-                ProductName: ""+book[i].ProductName,
-                ProductPrice: ""+book[i].ProductPrice,
-                ProductReview: ""+book[i].ProductReview,
-                ProductOwner: ""+book[i].ProductOwner,
-                Isbn: ""+book[i].Isbn,
-                Author: ""+book[i].Author,
-                Category: ""+book[i].Category,
+                ProductID: "" + book[i].ProductID,
+                ProductName: "" + book[i].ProductName,
+                ProductPrice: "" + book[i].ProductPrice,
+                ProductReview: "" + book[i].ProductReview,
+                ProductOwner: "" + book[i].ProductOwner,
+                Isbn: "" + book[i].Isbn,
+                Author: "" + book[i].Author,
+                Category: "" + book[i].Category,
 
             };
 
@@ -42,19 +42,19 @@ $(document).ready(function () {
     //submit the add employee form to the server
     $('form').submit(function (event) {
 
-        /**
-         * salary and privilege are not sent to the server since there is no endpoint that accepts those parameters
-         * @type {{firstName: *, lastName: *}}
-         */
+        // /**
+        //  * salary and privilege are not sent to the server since there is no endpoint that accepts those parameters
+        //  * @type {{firstName: *, lastName: *}}
+        //  */
         var formData = {
             'ProductName': getProductName(),
             'ProductPrice': getProductPrice(),
             'ProductReview': getProductReview(),
             'ProductOwner': getProductOwner(),
-            'ProductID':getProductID(),
+            'ProductID': getProductID(),
             'Isbn': getIsbn(),
             'Author': getAuthor(),
-            'Category': getCategory());
+            'Category': getCategory()
         };
 
         $.ajax({
@@ -67,7 +67,7 @@ $(document).ready(function () {
             data: JSON.stringify(formData),
             dataType: 'json',
             encode: true
-        }).done(function(returnedData){
+        }).done(function (returnedData) {
 
             alert("Book has been added");
 
@@ -76,48 +76,46 @@ $(document).ready(function () {
 
     });
 
-    }
-    function getProductName(){
+    function getProductName() {
         return $("input[name=bookname]").val();
-
+    
     }
-
-    function getProductPrice(){
+    
+    function getProductPrice() {
         return $("input[name=productprice]").val();
-
-
+    
+    
     }
-
-    function getProductReview(){
+    
+    function getProductReview() {
         return $("input[name=bookreview]").val();
-
-
+    
+    
     }
-
-    function getProductOwner(){
+    
+    function getProductOwner() {
         return $("input[name=ownername]").val();
-
-
+    
+    
     }
-
-    function getProductID(){
+    
+    function getProductID() {
         return $("input[name=productid]").val();
-
-
+    
+    
     }
-
-    function getIsbn(){
+    
+    function getIsbn() {
         return $("input[name=isbn]").val();
-
-
+    
+    
     }
-
-    function getCategory(){
+    
+    function getCategory() {
         return $("input[name=category]").val();
-
-
+    
+    
     }
+}
 
-
-
-});
+);
