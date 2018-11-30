@@ -16,6 +16,26 @@
               <h2 style="text-align:center;"> Our Directory</h2>
          </div>
 
+         <!-- a script for dynamically generating employees on the homepage. uses handlebard library. More info: https://handlebarsjs.com/ -->
+         <script id="employee-modal-template" type="text/x-handlebars-template">
+
+           <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item" id="{{employeeCardId}}">
+             <div class="card h-100">
+               <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+               <div class="card-body">
+                 <h4 class="card-title">
+                   <a href="#">{{employeeName}}</a>
+                 </h4>
+                 <p class="card-text">{{employeeID}}</p>
+                 <p class="card-text">{{employeeSalary}}</p>
+               </div>
+             </div>
+           </div>
+
+         </script>
+
+
+
         <script src="js/main.js"></script>
         <script>includeHTML();</script>
     </body>
