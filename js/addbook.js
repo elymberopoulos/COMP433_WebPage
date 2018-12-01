@@ -1,40 +1,8 @@
 $(document).ready(function () {
 
     //extract whatever is inside of the script tag with an id of employee-modal-template
-    var source = $("#book-modal-template").html();
-
-    var book_modal_template = Handlebars.compile(source);
 
     var bookResourceURI = "http://localhost:8081/book"
-    //http://localhost:8081/partner
-
-    //retrieve all the employees from server then display them on the homepage
-    // if server doesn't return any employees for some reason, the homepage will not have a list of employees displayed.
-    $.getJSON(bookResourceURI, function (book) {
-
-        for (var i = 0; i < book.length; i++) {
-
-            var bookData = {
-                ProductID: "" + book[i].ProductID,
-                ProductName: "" + book[i].ProductName,
-                ProductPrice: "" + book[i].ProductPrice,
-                ProductReview: "" + book[i].ProductReview,
-                ProductOwner: "" + book[i].ProductOwner,
-                Isbn: "" + book[i].Isbn,
-                Author: "" + book[i].Author,
-                Category: "" + book[i].Category,
-
-            };
-
-            //replace all the variables within the compiled script tag above with each value of employee data.
-            var bookElementToAppend = book_modal_template(bookData);
-
-            //embed the html element which contains employee information into the html div tag with id 'content'
-            $("#content").append(bookElementToAppend);
-
-        }
-
-    });
 
 
 
