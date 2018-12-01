@@ -1,41 +1,9 @@
 $(document).ready(function () {
 
     //extract whatever is inside of the script tag with an id of employee-modal-template
-    var source = $("#partner-modal-template").html();
-
-    var partner_modal_template = Handlebars.compile(source);
 
     var partnerResourceURI = "http://localhost:8081/partner"
     //http://localhost:8081/partner
-
-    //retrieve all the employees from server then display them on the homepage
-    // if server doesn't return any employees for some reason, the homepage will not have a list of employees displayed.
-    $.getJSON(partnerResourceURI, function (partner) {
-
-        for (var i = 0; i < partner.length; i++) {
-
-            var partnerData = {
-                FirstName: "" + partner[i].firstName,
-                LastName: "" + partner[i].lastName,
-                Email: "" + partner[i].email,
-                PhoneNumber: "" + partner[i].phoneNumber,
-                CompanyName: "" + partner[i].companyName,
-                Address: "" + partner[i].address,
-                bankaccountNumber: "" + partner[i].bankAccountNumber,
-
-            };
-
-            //replace all the variables within the compiled script tag above with each value of employee data.
-            var partnerElementToAppend = partner_modal_template(partnerData);
-
-            //embed the html element which contains employee information into the html div tag with id 'content'
-            $("#content").append(partnerElementToAppend);
-
-        }
-
-    });
-
-
 
 
     //submit the add employee form to the server
