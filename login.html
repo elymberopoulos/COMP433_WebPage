@@ -22,7 +22,8 @@
 
         <label for="password"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="password" id="password" required>
-
+        <input type="radio" name="usertype" value="customer" id="customer" checked> Customer<br>
+        <input type="radio" name="usertype" value="partner" id="partner"> Partner<br>
         <input type="button" value="Login" id="submit" onclick="validate()"/>
         <label>
           <input type="checkbox" checked="checked" name="remember"> Remember me
