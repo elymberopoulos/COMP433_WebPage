@@ -44,7 +44,7 @@ $(document).ready(function () {
 
     });
     function getCustomerPassword() {
-        return $("input[name=bookreview]").val();
+        return $("input[name=password]").val();
     }
 
     function getUserID(){
