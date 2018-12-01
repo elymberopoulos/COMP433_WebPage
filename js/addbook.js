@@ -15,14 +15,14 @@ $(document).ready(function () {
         //  * @type {{firstName: *, lastName: *}}
         //  */
         var formData = {
-            'ProductName': getProductName(),
-            'ProductPrice': getProductPrice(),
-            'ProductReview': getProductReview(),
-            'ProductOwner': getProductOwner(),
-            'ProductID': getProductID(),
-            'Isbn': getIsbn(),
-            'Author': getAuthor(),
-            'Category': getCategory()
+            'productName': getProductName(),
+            'productPrice': getProductPrice(),
+            'productReview': getProductReview(),
+            'productOwner': getProductOwner(),
+            'productID': getProductID(),
+            'isbn': getIsbn(),
+            'author': getAuthor(),
+            'category': getCategory()
         };
 
         $.ajax({
@@ -46,43 +46,49 @@ $(document).ready(function () {
 
     function getProductName() {
         return $("input[name=bookname]").val();
-    
+
     }
-    
+
     function getProductPrice() {
         return $("input[name=productprice]").val();
-    
-    
+
+
     }
-    
+
     function getProductReview() {
         return $("input[name=bookreview]").val();
-    
-    
+
+
     }
-    
+
     function getProductOwner() {
         return $("input[name=ownername]").val();
-    
-    
+
+
     }
-    
+
     function getProductID() {
         return $("input[name=productid]").val();
-    
-    
+
+
     }
-    
+
     function getIsbn() {
         return $("input[name=isbn]").val();
-    
-    
+
+
     }
-    
+
+    function getAuthor() {
+        return $("input[name=author]").val();
+
+
+    }
+
     function getCategory() {
         return $("input[name=category]").val();
-    
-    
+
+
     }
 }
 
