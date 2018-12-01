@@ -14,13 +14,15 @@ $(document).ready(function () {
         //  * @type {{firstName: *, lastName: *}}
         //  */
         var formData = {
-            'FirstName': getfirstName(),
-            'LastName': getlastName(),
-            'Email': getemail(),
-            'PhoneNumber': getphoneNumber(),
-            'CompanyName': getcompanyName(),
-            'Address': getaddress(),
-            'bankaccountNumber': getbankAccountNumber(),
+            'userID': getUserID(),
+            'firstName': getfirstName(),
+            'lastName': getlastName(),
+            'companyName': getcompanyName(),
+            'address': getaddress(),
+            'phoneNumber': getphoneNumber(),
+            'email': getemail(),
+            'bankAccountNumber': getbankAccountNumber(),
+            'partnerPassword': getPartnerPassword()
         };
 
         $.ajax({
@@ -41,6 +43,15 @@ $(document).ready(function () {
         event.preventDefault(); // waits for a response from server before proceeding with the rest of the code
 
     });
+
+
+    function getPartnerPassword() {
+        return $("input[name=password]").val();
+    }
+
+    function getUserID(){
+        return $("input[name=userID]").val();
+    }
 
     function getfirstName() {
         return $("input[name=FirstName]").val();
