@@ -4,8 +4,12 @@
         <meta charset="utf-8">
         <title></title>
         <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="addbook.css">
+        <link rel="stylesheet" href="directory.css">
         <link rel="stylesheet" href="background.css">
+
+        <script src="js/handlebars-v4.0.12.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/directory.js"></script>
     </head>
     <body>
         <div w3-include-html="navigation.html"></div>
@@ -17,7 +21,33 @@
          </div>
 
 
+         <div id="user-container"></div>
+         </div>
 
+         <script id="userTemplate" type="text/x-handlebars-template">
+         {{#each user}}
+         <div class="user">
+
+           <div class="info-column">
+             <h2>{{firstName}} {{lastName}} <span class="userid">{{userID}}</span></h2>
+
+             <h4 class="headline-bar">User Information</h4>
+             <ul class="user-information">
+                <li>
+                    <h4>Company Name: {{companyName}}</h4>
+                    <h4>Address: {{address}}</h4>
+                    <h4>Phone Number: {{phoneNumber}}</h4>
+                    <h4>Email: {{email}}</h4>
+                    <h4>Number of Orders: {{numberOfOrders}}</h4>
+                </li>
+             </ul>
+
+           </div>
+         </div>
+         {{/each}}
+         </script>
+
+         <div style="margin-top:150px"></div>
 
 
         <script src="js/main.js"></script>
