@@ -22,9 +22,9 @@
 
         <label for="password"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="password" id="password" required>
-        <input type="radio" name="usertype" value="customer" id="customer" checked> Customer<br>
-        <input type="radio" name="usertype" value="partner" id="partner"> Partner<br>
-        <input type="button" value="Login" id="submit" onclick="validate()"/>
+        <input type="radio" name="usertype" value="customer" id="customerCheck" checked> Customer<br>
+        <input type="radio" name="usertype" value="partner" id="partnerCheck"> Partner<br>
+        <input type="button" value="Login" id="submitLogin" />
         <label>
           <input type="checkbox" checked="checked" name="remember"> Remember me
         </label>
@@ -35,6 +35,7 @@
         <span class="psw">Forgot <a href="#">password?</a></span>
       </div>
     </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script src="js/login.js"></script>
     <script src="js/main.js"></script>
