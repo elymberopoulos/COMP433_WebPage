@@ -4,48 +4,57 @@
         <meta charset="utf-8">
         <title></title>
         <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="directory.css">
         <link rel="stylesheet" href="background.css">
+        <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+        <link href="4-col-portfolio.css" rel="stylesheet">
 
+        <script src="js/directory.js"></script>
+        <script src="bootstrap/bootstrap.min.js"></script> <!-- bootstrap libraries -->
         <script src="js/handlebars-v4.0.12.js"></script>
         <script src="js/main.js"></script>
-        <script src="js/directory.js"></script>
-    </head>
+<style>
+span {
+    background-color: #f3f3f3;
+}
+</style>
+
+        </head>
     <body>
         <div w3-include-html="navigation.html"></div>
         <div w3-include-html="footer.html"></div>
 
 <div style="margin-top:100px"></div>
           <div class="container">
-              <h2 style="text-align:center;"> Our Directory</h2>
+
+         <h1 style="text-align:center;"> <span> Our Directory </span></h1>
          </div>
 
 
-         <div id="user-container"></div>
-         </div>
+         <!-- a script for dynamically generating employees on the homepage. uses handlebard library. More info: https://handlebarsjs.com/ -->
+         <script id="customer-modal-template" type="text/x-handlebars-template">
 
-         <script id="userTemplate" type="text/x-handlebars-template">
-         {{#each user}}
-         <div class="user">
+           <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item" id="{{userID}}">
+             <div class="card h-100">
+               <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+               <div class="card-body">
+                 <h4 class="card-title">
+                   <a href="#">{{customerName}}</a>
+                 </h4>
+                 <p class="card-text">{{userID}}</p>
+                 <p class="card-text">{{companyName}}</p>
 
-           <div class="info-column">
-             <h2>{{firstName}} {{lastName}} <span class="userid">{{userID}}</span></h2>
+               </div>
+             </div>
+           </div>
 
-             <h4 class="headline-bar">User Information</h4>
-             <ul class="user-information">
-                <li>
-                    <h4>Company Name: {{companyName}}</h4>
-                    <h4>Address: {{address}}</h4>
-                    <h4>Phone Number: {{phoneNumber}}</h4>
-                    <h4>Email: {{email}}</h4>
-                    <h4>Number of Orders: {{numberOfOrders}}</h4>
-                </li>
-             </ul>
+         </script>
+
+               <!-- the html div tag where the employee content will be dynamically generated into. Look at hr_employee.js for the code responsible for generating that content -->
+           <div class="row" id="content">
+
+
 
            </div>
-         </div>
-         {{/each}}
-         </script>
 
          <div style="margin-top:150px"></div>
 
