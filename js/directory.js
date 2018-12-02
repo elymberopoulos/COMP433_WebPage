@@ -16,7 +16,7 @@ $(document).ready(function () {
 
             var customerData = {
                 userID: ""+customer[i].userID,
-                customerName: ""+customer[i].firstName + " " + employees[i].lastName,
+                customerName: ""+customer[i].firstName + " " + customer[i].lastName,
                 companyName: ""+customer[i].companyName,
             };
 
