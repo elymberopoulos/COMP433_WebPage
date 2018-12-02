@@ -1,22 +1,24 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Books</title>
-        <link rel="stylesheet" href="bookstemplate.css">
-    </head>
-    <body>
 
-        <div w3-include-html="navigation.html"></div>
-        <div w3-include-html="footer.html"></div>
+<head>
+  <meta charset="utf-8">
+  <title>Books</title>
+  <link rel="stylesheet" href="bookstemplate.css">
+</head>
 
-        <div class="page-wrap">
-  <h1>Books</h1>
-  <div id="pets-container"></div>
-</div>
+<body>
 
-<script id="petsTemplate" type="text/x-handlebars-template">
-{{#each pets}}
+  <div w3-include-html="navigation.html"></div>
+  <div w3-include-html="footer.html"></div>
+
+  <div class="page-wrap">
+    <h1>Books</h1>
+    <div id="pets-container"></div>
+  </div>
+
+  <script id="petsTemplate" type="text/x-handlebars-template">
+    {{#each pets}}
   <div class="pet">
     <div class="photo-column">
       <img src="{{photo}}">
@@ -37,17 +39,19 @@
       {{/if}}
       <br>
     <a href="checkout.html" class="button">Buy Now</a>
-</br>
     </div>
   </div>
 {{/each}}
 </script>
 
-<div style="margin-top:150px"></div>
+  <div style="margin-top:150px"></div>
 
-        <script src="js/handlebars-v4.0.12.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/bookstemplate.js"></script>
-        <script>includeHTML();</script>
-    </body>
+  <script src="js/handlebars-v4.0.12.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/bookstemplate.js"></script>
+  <script>
+    includeHTML();
+  </script>
+</body>
+
 </html>
