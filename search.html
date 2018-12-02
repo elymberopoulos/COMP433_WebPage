@@ -39,9 +39,13 @@
 
         <script>
         $(document).ready(function(){
-        var searchValue = $('#search').val();
-        var bookResourceURI= "http://localhost:8081/book/" + searchValue;
+            var searchButton = document.getElementById("searchButton").addEventListener("click", initiateAjaxRequest);
+        // var searchValue = $('#search').val();
         console.log(bookResourceURI);
+        function initiateAjaxRequest(){
+            var bookResourceURI= "http://localhost:8081/book/" + $('#search').val();;
+
+        }
          $.ajaxSetup({ cache: false });
          $('#search').keyup(function(){
           $('#result').html('');
