@@ -3,7 +3,7 @@ ourRequest.open('GET', 'http://localhost:8081/book');
 ourRequest.onload = function() {
   if (ourRequest.status >= 200 && ourRequest.status < 400) {
     var data = JSON.parse(ourRequest.responseText);
-    createHTML(data);
+    createHTML(booksdata);
   } else {
     console.log("We connected to the server, but it returned an error.");
   }
