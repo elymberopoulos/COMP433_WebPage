@@ -25,6 +25,7 @@ $(document).ready(function () {
     var userID, passwordAttempt, firstName, lastName;
     var authenticated = false;
     var submitLogin = document.getElementById("submitLogin").addEventListener("click", userLogin);
+    var partnerLogin = document.getElementById("partnerLogin").addEventListener("click", partnerLogin);
 
 
     function userLogin() {
@@ -65,20 +66,58 @@ $(document).ready(function () {
         console.log(passwordAttempt);
         if(userID === idAttempt && userPassword === passwordAttempt){
             authenticated = true;  
-            console.log("login authenticated");
+            console.log("Customer login authenticated");
      
         }
         else{
-            console.log("not authenticated");
+            console.log("Customer not authenticated");
         }
     }
 
-    function getCustomerPassword() {
-        return $("input[name=password]").val();
+
+    function partnerLogin() {
+        var partnerResourceURI = "http://localhost:8081/partner/" + $('#username').val();
+        console.log(partnerResourceURI);
+        $.ajax({
+            method: "GET",
+            url: partnerResourceURI,
+            success: function (data) {
+                console.log("hitting partner method");
+                // dataReturn = jQuery.getJSON(data);
+                // console.log(dataReturn);
+                console.log(data);
+                partnerID = data.userID;
+                partnerPassword = data.partnerPassword;
+                firstName = data.firstName;
+                lastName = data.lastName;
+                console.log(firstName);
+                console.log(lastName);
+                console.log(userID);
+                console.log(partnerPassword);
+                console.log("RESULT TEST PARTNER ID: " + partnerID);
+                console.log("RESULT TEST PARTNER PASSWORD: " + partnerPassword);
+                partnerLoginCheck(partnerID, partnerPassword);
+
+            }
+
+        });
     }
 
-    function getUserID() {
-        return $("input[name=userID]").val();
+    function partnerLoginCheck(partnerID, partnerPassword){
+        var idAttempt = document.getElementById("username").value;
+        var passwordAttempt = document.getElementById("password").value;
+        console.log("login check");
+        console.log(partnerID);
+        console.log(partnerPassword);
+        console.log(idAttempt);
+        console.log(passwordAttempt);
+        if(partnerID === idAttempt && partnerPassword === passwordAttempt){
+            authenticated = true;  
+            console.log("Partner login authenticated");
+     
+        }
+        else{
+            console.log("Partner not authenticated");
+        }
     }
-
 });
