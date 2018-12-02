@@ -43,7 +43,6 @@ $(document).ready(function () {
 
     function getProductName() {
         return $("input[name=bookname]").val();
-
     }
 
     function getProductPrice() {

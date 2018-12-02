@@ -22,9 +22,10 @@
 // }
 
 $(document).ready(function () {
-    var dbLoginID, dbLoginPassword;
+    var userID, passwordAttempt, firstName, lastName;
+    var authenticated = false;
     var submitLogin = document.getElementById("submitLogin").addEventListener("click", userLogin);
- 
+
 
     function userLogin() {
         var customerResourceURI = "http://localhost:8081/customer/" + $('#username').val();
@@ -34,15 +35,42 @@ $(document).ready(function () {
             url: customerResourceURI,
             success: function (data) {
                 console.log("hitting success method");
-                dataReturn = jQuery.getJSON(data);
+                // dataReturn = jQuery.getJSON(data);
+                // console.log(dataReturn);
                 console.log(data);
-                dbLoginID = dataReturn.userID.val();
-                dbLoginPassword = dataReturn.password.val();
-                console.log("RESULT TEST: " + dbLoginID + dbLoginPassword);
+                userID = data.userID;
+                userPassword = data.password;
+                firstName = data.firstName;
+                lastName = data.lastName;
+                console.log(firstName);
+                console.log(lastName);
+                console.log(userID);
+                console.log(userPassword);
+                console.log("RESULT TEST USER ID: " + userID);
+                console.log("RESULT TEST USER PASSWORD: " + userPassword);
+                loginCheck(userID, userPassword);
 
             }
 
         });
+    }
+
+    function loginCheck(userID, userPassword){
+        var idAttempt = document.getElementById("username").value;
+        var passwordAttempt = document.getElementById("password").value;
+        console.log("login check");
+        console.log(userID);
+        console.log(userPassword);
+        console.log(idAttempt);
+        console.log(passwordAttempt);
+        if(userID === idAttempt && userPassword === passwordAttempt){
+            authenticated = true;  
+            console.log("login authenticated");
+     
+        }
+        else{
+            console.log("not authenticated");
+        }
     }
 
     function getCustomerPassword() {
