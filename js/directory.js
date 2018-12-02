@@ -1,26 +1,31 @@
-var ourRequest = new XMLHttpRequest();
-ourRequest.open('GET', 'http://localhost:8081/customer' + 'http://localhost:8081/partner');
-ourRequest.onload = function() {
-  if (ourRequest.status >= 200 && ourRequest.status < 400) {
-    var data = JSON.parse(ourRequest.responseText);
-    createHTML(data);
-  } else {
-    console.log("We connected to the server, but it returned an error.");
-  }
-};
+$(document).ready(function () {
 
-ourRequest.onerror = function() {
-  console.log("Connection error");
-};
+    //extract whatever is inside of the script tag with an id of employee-modal-template
+    var source = $("#customer-modal-template").html();
 
-ourRequest.send();
+    var customer_modal_template = Handlebars.compile(source);
 
+    var customerResourceURI= "http://localhost:8081/customer"
+    //http://localhost:8081/partner
 
-function createHTML(userData) {
-  var rawTemplate = document.getElementById("userTemplate").innerHTML;
-  var compiledTemplate = Handlebars.compile(rawTemplate);
-  var ourGeneratedHTML = compiledTemplate(userData);
+    //retrieve all the employees from server then display them on the homepage
+    // if server doesn't return any employees for some reason, the homepage will not have a list of employees displayed.
+    $.getJSON(customerResourceURI, function (customer) {
 
-  var userContainer = document.getElementById("user-container");
-  userContainer.innerHTML = ourGeneratedHTML;
-}
+        for (var i = 0; i < customer.length; i++) {
+
+            var customerData = {
+                userID: ""+customer[i].userID,
+                customerName: ""+customer[i].firstName + " " + employees[i].lastName,
+                companyName: ""+customer[i].companyName,
+            };
+
+            //replace all the variables within the compiled script tag above with each value of employee data.
+            var customerElementToAppend = customer_modal_template(customerData);
+
+            //embed the html element which contains employee information into the html div tag with id 'content'
+            $("#content").append(customerElementToAppend);
+
+        }
+
+    });
