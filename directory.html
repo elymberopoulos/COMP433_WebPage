@@ -32,7 +32,7 @@ span {
 
          <!-- a script for dynamically generating employees on the homepage. uses handlebard library. More info: https://handlebarsjs.com/ -->
          <script id="customer-modal-template" type="text/x-handlebars-template">
-
+         {{#each customer}}
            <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item" id="{{userID}}">
              <div class="card h-100">
                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
@@ -46,7 +46,7 @@ span {
                </div>
              </div>
            </div>
-
+        {{/each}}
          </script>
 
                <!-- the html div tag where the employee content will be dynamically generated into. Look at hr_employee.js for the code responsible for generating that content -->
