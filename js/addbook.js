@@ -4,9 +4,6 @@ $(document).ready(function () {
 
     var bookResourceURI = "http://localhost:8081/book"
 
-
-
-
     //submit the add employee form to the server
     $('form').submit(function (event) {
 
@@ -46,7 +43,6 @@ $(document).ready(function () {
 
     function getProductName() {
         return $("input[name=bookname]").val();
-
     }
 
     function getProductPrice() {

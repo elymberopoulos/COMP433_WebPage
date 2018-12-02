@@ -39,7 +39,9 @@
 
         <script>
         $(document).ready(function(){
-        var bookResourceURI= "http://localhost:8081/book"
+        var searchValue = $('#search').val();
+        var bookResourceURI= "http://localhost:8081/book/" + searchValue;
+        console.log(bookResourceURI);
          $.ajaxSetup({ cache: false });
          $('#search').keyup(function(){
           $('#result').html('');
