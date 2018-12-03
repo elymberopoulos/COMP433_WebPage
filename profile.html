@@ -33,7 +33,7 @@
                  <div id="profile-container"></div>
                  </div>
 
-                 <script id="profileTemplate" type="text/x-handlebars-template">
+                 <!-- <script id="profileTemplate" type="text/x-handlebars-template">
                   <div class="user">
 
                    <div class="info-column">
@@ -52,7 +52,26 @@
 
                    </div>
                  </div>
-                 </script>
+                 </script> -->
+                 <script id="customer-modal-template" type="text/x-handlebars-template">
+
+                    <div class="info-column" id="{{customerCardId}}">
+                      <div class="card h-100">
+                        <a href="#"><img class="card-img-top" src="http://placehold.it/100x100" alt=""></a>
+                        <div class="card-body">
+                          <h4 class="card-title">
+                            <a href={{profileLink}}>PROFILE {{customerName}}</a>
+                          </h4>
+                          <p class="card-text">{{userID}}</p>
+                          <!--<p class="card-text">{{employeeSalary}}</p>
+                          <p class="card-text">{{companyName}}</p>
+                          <p class="card-text">{{address}}</p>
+                          <p class="card-text">{{email}}</p> -->
+                        </div>
+                      </div>
+                    </div>
+                
+                  </script>
 
 
 

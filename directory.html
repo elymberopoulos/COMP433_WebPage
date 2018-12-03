@@ -28,10 +28,29 @@
         <a href="#"><img class="card-img-top" src="http://placehold.it/100x100" alt=""></a>
         <div class="card-body">
           <h4 class="card-title">
-            <a href={{profileLink}}>{{customerName}}</a>
+            <a href={{profileLink}}>PROFILE {{customerName}}</a>
           </h4>
           <p class="card-text">{{userID}}</p>
-          <p class="card-text">{{employeeSalary}}</p>
+          <!--<p class="card-text">{{employeeSalary}}</p>
+          <p class="card-text">{{companyName}}</p>
+          <p class="card-text">{{address}}</p>
+          <p class="card-text">{{email}}</p> -->
+        </div>
+      </div>
+    </div>
+
+  </script>
+  <script id="customer-modal-profile-template" type="text/x-handlebars-template">
+
+    <div class="info-column" id="{{customerCardId}}">
+      <div class="card h-100">
+        <a href="#"><img class="card-img-top" src="http://placehold.it/100x100" alt=""></a>
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href={{profileLink}}>PROFILE {{customerName}}</a>
+          </h4>
+          <p class="card-text">{{userID}}</p>
+          <p class="card-text">{{creditCardNumber}}</p>
           <p class="card-text">{{companyName}}</p>
           <p class="card-text">{{address}}</p>
           <p class="card-text">{{email}}</p>
@@ -40,9 +59,11 @@
     </div>
 
   </script>
-<div id = "content">
+  <input type="text" placeholder="Search user by ID" name="search">
+  <button id = "searchButton">search</button>
 
-</div>
+<div id = "content"></div>
+<div id = "profileContent"></div>
     <div style="margin-top:150px"></div>
     <script src="js/directory.js"></script>
 

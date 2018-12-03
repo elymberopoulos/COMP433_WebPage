@@ -56,7 +56,7 @@ $(document).ready(function () {
         });
     }
 
-    function loginCheck(userID, userPassword){
+    function loginCheck(userID, userPassword) {
         var idAttempt = document.getElementById("username").value;
         var passwordAttempt = document.getElementById("password").value;
         console.log("login check");
@@ -64,12 +64,12 @@ $(document).ready(function () {
         console.log(userPassword);
         console.log(idAttempt);
         console.log(passwordAttempt);
-        if(userID === idAttempt && userPassword === passwordAttempt){
-            authenticated = true;  
+        if (userID === idAttempt && userPassword === passwordAttempt) {
+            authenticated = true;
             console.log("Customer login authenticated");
-     
-        }
-        else{
+            alert("Welcome " + userID);
+
+        } else {
             console.log("Customer not authenticated");
         }
     }
@@ -103,7 +103,7 @@ $(document).ready(function () {
         });
     }
 
-    function partnerLoginCheck(partnerID, partnerPassword){
+    function partnerLoginCheck(partnerID, partnerPassword) {
         var idAttempt = document.getElementById("username").value;
         var passwordAttempt = document.getElementById("password").value;
         console.log("login check");
@@ -111,12 +111,12 @@ $(document).ready(function () {
         console.log(partnerPassword);
         console.log(idAttempt);
         console.log(passwordAttempt);
-        if(partnerID === idAttempt && partnerPassword === passwordAttempt){
-            authenticated = true;  
+        if (partnerID === idAttempt && partnerPassword === passwordAttempt) {
+            authenticated = true;
             console.log("Partner login authenticated");
-     
-        }
-        else{
+            alert("Welcome " + partnerID);
+
+        } else {
             console.log("Partner not authenticated");
         }
     }

@@ -22,7 +22,7 @@ $(document).ready(function () {
             'email': getemail(),
             //'customerOrder': null,
             'creditCardNumber': getcreditCardNumber(),
-            'customerPassword': getCustomerPassword()
+            'password': getCustomerPassword()
         };
 
         $.ajax({
