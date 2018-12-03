@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Books</title>
+        <link rel="stylesheet" href="books.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <script src="js/handlebars-v4.0.12.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/books.js"></script>
+
+        <style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+</style>
+    </head>
+    <body>
+
+        <div w3-include-html="navigation.html"></div>
+
+
+        <div class="page-wrap">
+  <h1>Books</h1>
+  <div id="books-container"></div>
+</div>
+
+    <div class="row" id="{{bookCardId}}">
+    <div class="column">
+      <div class="card">
+          <a href="#"><img class="card-img-top" src="http://placehold.it/100x100" alt=""></a>
+        <h3>
+          <a href={{profileLink}}>Product Name: {{productName}}</a>
+      </h3>
+        <p class="card-text"> Product Price: {{productPrice}}</p>
+        <p class="card-text">Product Owner: {{productOwner}}</p>
+        <p class="card-text">Product Review: {{productReview}}</p>
+        <p class="card-text"> Author: {{author}}</p>
+        <p class="card-text">ISBN: {{isbn}}</p>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+          <a href="#"><img class="card-img-top" src="http://placehold.it/100x100" alt=""></a>
+        <h3>
+          <a href={{profileLink}}>Product Name: {{productName}}</a>
+      </h3>
+        <p class="card-text"> Product Price: {{productPrice}}</p>
+        <p class="card-text">Product Owner: {{productOwner}}</p>
+        <p class="card-text">Product Review: {{productReview}}</p>
+        <p class="card-text"> Author: {{author}}</p>
+        <p class="card-text">ISBN: {{isbn}}</p>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+          <a href="#"><img class="card-img-top" src="http://placehold.it/100x100" alt=""></a>
+        <h3>
+          <a href={{profileLink}}>Product Name: {{productName}}</a>
+      </h3>
+        <p class="card-text"> Product Price: {{productPrice}}</p>
+        <p class="card-text">Product Owner: {{productOwner}}</p>
+        <p class="card-text">Product Review: {{productReview}}</p>
+        <p class="card-text"> Author: {{author}}</p>
+        <p class="card-text">ISBN: {{isbn}}</p>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+          <a href="#"><img class="card-img-top" src="http://placehold.it/100x100" alt=""></a>
+        <h3>
+          <a href={{profileLink}}>Product Name: {{productName}}</a>
+      </h3>
+        <p class="card-text"> Product Price: {{productPrice}}</p>
+        <p class="card-text">Product Owner: {{productOwner}}</p>
+        <p class="card-text">Product Review: {{productReview}}</p>
+        <p class="card-text"> Author: {{author}}</p>
+        <p class="card-text">ISBN: {{isbn}}</p>
+      </div>
+    </div>
+    
+  </div>
+
+
+
+
+<div id = "content">
+
+</div>
+<!-- <script id="booksTemplate" type="text/x-handlebars-template">
+{{#each books}}
+  <div class="book">
+    <div class="photo-column">
+      <img src="{{photo}}">
+    </div>
+
+    <div class="info-column">
+      <h2>{{productName}} <span class="price">{{productPrice}}</span></h2>
+
+      <h4 class="headline-bar">Book Information</h4>
+      <ul class="book-information">
+         <li>
+             <h4>Author: {{author}}</h4>
+             <h4>ISBN: {{isbn}}</h4>
+             <h4>Product Owner: {{productOwner}}</h4>
+             <h4>Product ID: {{productID}}</h4>
+             <h4>Category: {{category}}</h4>
+             <h4>Product Review: {{productReview}}</h4>
+         </li>
+      </ul>
+      <br>
+     <a href="checkout.html" class="button">Buy Now</a>
+     </br>
+
+    </div>
+  </div>
+{{/each}}
+</script> -->
+
+<div style="margin-top:150px"></div>
+
+
+        <script>includeHTML();</script>
+    </body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Directory</title>
+    <link rel="stylesheet" href="bookstemplate.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/handlebars-v4.0.12.js"></script>
+
+    <style>
+    #customers {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    #customers td, #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+    #customers tr:hover {background-color: #ddd;}
+
+    #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #4CAF50;
+        color: white;
+    }
+    </style>
+</head>
+
+<body>
+
+    <div w3-include-html="navigation.html"></div>
+    <div w3-include-html="footer.html"></div>
+
+    <div class="page-wrap">
+        <h1>Our Directory</h1>
+        <div id="customerTemplate"></div>
+    </div>
+
+<script id="customer-modal-template" type="text/x-handlebars-template">
+
+    <div class="info-column" id="{{customerCardId}}">
+      <div class="card h-100">
+        <a href="#"><img class="card-img-top" src="http://placehold.it/100x100" alt=""></a>
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href={{profileLink}}>{{customerName}}</a>
+          </h4>
+          <p class="card-text">{{userID}}</p>
+          <p class="card-text">{{employeeSalary}}</p>
+          <p class="card-text">{{companyName}}</p>
+          <p class="card-text">{{address}}</p>
+          <p class="card-text">{{email}}</p>
+        </div>
+      </div>
+    </div>
+
+      </script>
+
+      <table id="customers">
+        <tr>
+          <th>User ID</th>
+          <th>Name</th>
+          <th>Company Name</th>
+          <th>Address</th>
+          <th>Email</th>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>Maria Anders</td>
+          <td>Germany</td>
+          <td>Germany</td>
+          <td>Germany</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td>Christina Berglund</td>
+          <td>Sweden</td>
+          <td>Germany</td>
+          <td>Germany</td>
+        </tr>
+        <tr>
+          <td>19</td>
+          <td>Christina Berglund</td>
+          <td>Sweden</td>
+          <td>Germany</td>
+          <td>Germany</td>
+        </tr>
+        </table>
+
+
+<div id = "content">
+
+</div>
+    <div style="margin-top:150px"></div>
+    <script src="js/directory.js"></script>
+
+    <script>
+        includeHTML();
+    </script>
+
+</body>
+
+</html>
