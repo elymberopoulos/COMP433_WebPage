@@ -26,6 +26,7 @@ $(document).ready(function () {
     var authenticated = false;
     var submitLogin = document.getElementById("submitLogin").addEventListener("click", userLogin);
     var partnerLogin = document.getElementById("partnerLogin").addEventListener("click", partnerLogin);
+    console.log(document.cookie);
 
 
     function userLogin() {
@@ -68,6 +69,10 @@ $(document).ready(function () {
             authenticated = true;
             console.log("Customer login authenticated");
             alert("Welcome " + userID);
+            (function () {
+                document.cookie = "userID" + "=" + userID + ";";
+            });
+            console.log(document.cookie);
 
         } else {
             console.log("Customer not authenticated");
@@ -115,6 +120,10 @@ $(document).ready(function () {
             authenticated = true;
             console.log("Partner login authenticated");
             alert("Welcome " + partnerID);
+            (function () {
+                document.cookie = "partnerID" + "=" + partnerID + ";";
+            });
+            console.log(document.cookie);
 
         } else {
             console.log("Partner not authenticated");
