@@ -26,6 +26,7 @@ $(document).ready(function () {
     var authenticated = false;
     var submitLogin = document.getElementById("submitLogin").addEventListener("click", userLogin);
     var partnerLogin = document.getElementById("partnerLogin").addEventListener("click", partnerLogin);
+    console.log(document.cookie);
 
 
     function userLogin() {
@@ -56,7 +57,7 @@ $(document).ready(function () {
         });
     }
 
-    function loginCheck(userID, userPassword){
+    function loginCheck(userID, userPassword) {
         var idAttempt = document.getElementById("username").value;
         var passwordAttempt = document.getElementById("password").value;
         console.log("login check");
@@ -64,12 +65,16 @@ $(document).ready(function () {
         console.log(userPassword);
         console.log(idAttempt);
         console.log(passwordAttempt);
-        if(userID === idAttempt && userPassword === passwordAttempt){
-            authenticated = true;  
+        if (userID === idAttempt && userPassword === passwordAttempt) {
+            authenticated = true;
             console.log("Customer login authenticated");
-     
-        }
-        else{
+            alert("Welcome " + userID);
+            (function () {
+                document.cookie = "userID" + "=" + userID + ";";
+            });
+            console.log(document.cookie);
+
+        } else {
             console.log("Customer not authenticated");
         }
     }
@@ -103,7 +108,7 @@ $(document).ready(function () {
         });
     }
 
-    function partnerLoginCheck(partnerID, partnerPassword){
+    function partnerLoginCheck(partnerID, partnerPassword) {
         var idAttempt = document.getElementById("username").value;
         var passwordAttempt = document.getElementById("password").value;
         console.log("login check");
@@ -111,12 +116,16 @@ $(document).ready(function () {
         console.log(partnerPassword);
         console.log(idAttempt);
         console.log(passwordAttempt);
-        if(partnerID === idAttempt && partnerPassword === passwordAttempt){
-            authenticated = true;  
+        if (partnerID === idAttempt && partnerPassword === passwordAttempt) {
+            authenticated = true;
             console.log("Partner login authenticated");
-     
-        }
-        else{
+            alert("Welcome " + partnerID);
+            (function () {
+                document.cookie = "partnerID" + "=" + partnerID + ";";
+            });
+            console.log(document.cookie);
+
+        } else {
             console.log("Partner not authenticated");
         }
     }

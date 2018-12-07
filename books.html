@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>Books</title>
         <link rel="stylesheet" href="books.css">
+        <script src="js/cookieParse.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
         <script src="js/handlebars-v4.0.12.js"></script>
@@ -23,16 +24,16 @@
 
   <div class="info-column" id="{{bookCardId}}">
     <div class="card h-100">
-      <a href="#"><img class="card-img-top" src="http://placehold.it/100x100" alt=""></a>
+      <a href={{profileLink}}><img class="card-img-top" src="http://placehold.it/100x100" alt=""></a>
       <div class="card-body">
         <h4 class="card-title">
           <a href={{profileLink}}>{{productName}}</a>
         </h4>
         <p class="card-text">{{productPrice}}</p>
-        <p class="card-text">{{productOwner}}</p>
+        <!-- <p class="card-text">{{productOwner}}</p>
         <p class="card-text">{{productReview}}</p>
         <p class="card-text">{{author}}</p>
-        <p class="card-text">{{isbn}}</p>
+        <p class="card-text">{{isbn}}</p> -->
       </div>
     </div>
   </div>
