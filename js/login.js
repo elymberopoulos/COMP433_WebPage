@@ -28,9 +28,10 @@ $(document).ready(function () {
     var partnerLogin = document.getElementById("partnerLogin").addEventListener("click", partnerLogin);
     console.log(document.cookie);
 
-
     function userLogin() {
-        var customerResourceURI = "http://localhost:8081/customer/" + $('#username').val();
+        var loginURL = getCookieFunction("customerLoginURL");
+         var customerResourceURI = loginURL;
+        // var customerResourceURI = "http://localhost:8081/customer/" + $('#username').val();
         console.log(customerResourceURI);
         $.ajax({
             method: "GET",
@@ -69,10 +70,11 @@ $(document).ready(function () {
             authenticated = true;
             console.log("Customer login authenticated");
             alert("Welcome " + userID);
-            (function () {
-                document.cookie = "userID" + "=" + userID + ";";
-            });
-            console.log(document.cookie);
+
+            var cookieTest = getCookieFunction("customerID");
+            console.log("COOKIE TEST FOR CUSTOMER ID: " + cookieTest);
+            console.log("DOCUMENT.COOKIE " + document.cookie);
+            document.location.href = "books.html";
 
         } else {
             console.log("Customer not authenticated");
@@ -81,7 +83,10 @@ $(document).ready(function () {
 
 
     function partnerLogin() {
-        var partnerResourceURI = "http://localhost:8081/partner/" + $('#username').val();
+        var partnerLoginURL = getCookieFunction("partnerLoginURL");
+        var partnerResourceURI = partnerLoginURL;
+
+        // var partnerResourceURI = "http://localhost:8081/partner/" + $('#username').val();
         console.log(partnerResourceURI);
         $.ajax({
             method: "GET",
@@ -120,11 +125,11 @@ $(document).ready(function () {
             authenticated = true;
             console.log("Partner login authenticated");
             alert("Welcome " + partnerID);
-            (function () {
-                document.cookie = "partnerID" + "=" + partnerID + ";";
-            });
-            console.log(document.cookie);
 
+            document.cookie = "partnerID" + "=" + partnerID + ";";
+
+            console.log(document.cookie);
+            document.location.href = "addbook.html";
         } else {
             console.log("Partner not authenticated");
         }

@@ -36,14 +36,22 @@ $(document).ready(function () {
             dataType: 'json',
             encode: true
         }).done(function (returnedData) {
-
+            console.log(returnedData);
+            var loginURL = returnedData.link[0].url;
+            var postBookURL = returnedData.link[1].url;
+            document.cookie = "postBookURL = " + postBookURL + ";";
+            document.cookie = "partnerID = " + returnedData.userID + ";";
+            document.cookie = "partnerLoginURL = " + loginURL + ";";
+            var cookieUserURLTest = getCookieFunction("partnerLoginURL");
+            var cookieUserIDTest = getCookieFunction("partnerID");
+            console.log("Cookie PARTNER USER ID Test: " + cookieUserIDTest);
+            console.log("Cookie PARTNER USER URL Test: " + cookieUserURLTest);
             alert("partner account has been created");
-
+            document.location.href = "login.html";
         });
         event.preventDefault(); // waits for a response from server before proceeding with the rest of the code
 
     });
-
 
     function getPartnerPassword() {
         return $("input[name=password]").val();

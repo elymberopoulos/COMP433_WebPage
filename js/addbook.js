@@ -1,21 +1,21 @@
 $(document).ready(function () {
 
     //extract whatever is inside of the script tag with an id of employee-modal-template
+    var postBookURL = getCookieFunction("postBookURL");
+    var bookResourceURI = postBookURL;
 
-    var bookResourceURI = "http://localhost:8081/book"
+    // var bookResourceURI = "http://localhost:8081/book"
 
     //submit the add employee form to the server
     $('form').submit(function (event) {
+        var partnerID = getCookieFunction("partnerID");
+        console.log("PARTNER ID FOR ADD A BOOK: " + partnerID);
 
-        // /**
-        //  * salary and privilege are not sent to the server since there is no endpoint that accepts those parameters
-        //  * @type {{firstName: *, lastName: *}}
-        //  */
         var formData = {
             'productName': getProductName(),
             'productPrice': getProductPrice(),
             'productReview': getProductReview(),
-            'productOwner': getProductOwner(),
+            'productOwner': getCookieFunction("partnerID"),
             'productID': getProductID(),
             'isbn': getIsbn(),
             'author': getAuthor(),
