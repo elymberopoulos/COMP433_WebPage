@@ -36,9 +36,21 @@ $(document).ready(function () {
             dataType: 'json',
             encode: true
         }).done(function (returnedData) {
-
+            console.log(returnedData);
+            var bookStoreURL = returnedData.link[0].url;
+            var loginURL = returnedData.link[1].url;
+            console.log(loginURL);
+            document.cookie = "bookStoreURL = " + bookStoreURL + ";";
+            document.cookie = "customerLoginURL = " + loginURL + ";";
+            document.cookie = "customerID = " + returnedData.userID + ";";
+            var loginURLTest = getCookieFunction("customerLoginURL");
+            console.log("LOGIN URL: " + loginURLTest);
+            var cookieTest = getCookieFunction("customerID");
+            console.log("Cookie CUSTOMER LOGIN Test: " + cookieTest);
+            var bookStoreCookie = getCookieFunction("bookStoreURL");
+            console.log("BOOKSTORE URL: " + bookStoreCookie);
             alert("Customer account has been created");
-
+            document.location.href = "login.html";
         });
         event.preventDefault(); // waits for a response from server before proceeding with the rest of the code
 

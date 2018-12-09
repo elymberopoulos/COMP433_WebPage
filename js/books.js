@@ -30,8 +30,9 @@ $(document).ready(function () {
   var source = $("#book-modal-template").html();
 
   var book_modal_template = Handlebars.compile(source);
-
-  var bookResourceURI= "http://localhost:8081/book/"
+  var bookResourceURI = getCookieFunction("bookStoreURL");
+  console.log("BOOKSTORE URI: " + bookResourceURI);
+  // var bookResourceURI= "http://localhost:8081/book/"
 
   //retrieve all the employees from server then display them on the homepage
   // if server doesn't return any employees for some reason, the homepage will not have a list of employees displayed.
@@ -46,8 +47,10 @@ $(document).ready(function () {
                   productReview: "" + books[i].productReview,
                   author: "" + books[i].author,
                   isbn: "" + books[i].isbn,
-                  profileLink: "" + books[i].link[0].url
+                  bookLink: "" + books[i].link[0].url
           };
+        //   link = bookData.bookLink
+        //   saveToCookie("",link)
           //replace all the variables within the compiled script tag above with each value of customer data.
           var bookElementToAppend = book_modal_template(bookData);
 
@@ -57,4 +60,12 @@ $(document).ready(function () {
       }
 
   });
+
+  // $("").submit{
+
+  //   href=> book page
+
+    
+
+  
 })

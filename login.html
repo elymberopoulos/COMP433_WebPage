@@ -9,7 +9,6 @@
 <body>
 
 <div w3-include-html="navigation.html"></div>
-<div w3-include-html="footer.html"></div>
 
 <div class="box" id="first"></div>
     <h2>Login Form</h2>
@@ -22,8 +21,7 @@
 
         <label for="password"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="password" id="password" required>
-        <input type="radio" name="usertype" value="customer" id="customerCheck" checked> Customer<br>
-        <input type="radio" name="usertype" value="partner" id="partnerCheck"> Partner<br>
+
         <input type="button" value="Customer Login" id="submitLogin" />
         <input type="button" value="Partner Login" id="partnerLogin" />
 
@@ -38,7 +36,7 @@
       </div>
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+    <script src="js/cookieParse.js"></script>
     <script src="js/login.js"></script>
     <script src="js/main.js"></script>
     <script>includeHTML();</script>
