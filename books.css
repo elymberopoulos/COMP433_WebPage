@@ -137,3 +137,8 @@ p {
     padding: 0;
   }
 }
+#placeOrderButton{
+  height: 40px;
+  width: 400px;
+  background-color: aqua;
+}
