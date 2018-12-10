@@ -27,6 +27,9 @@
 $(document).ready(function () {
   console.log("ready")
   //extract whatever is inside of the script tag with an id of employee-modal-template
+  $('#placeOrderButton').click(function(){
+    document.location.href = "orderBook.html";
+  })
   var source = $("#book-modal-template").html();
 
   var book_modal_template = Handlebars.compile(source);
@@ -38,6 +41,12 @@ $(document).ready(function () {
   // if server doesn't return any employees for some reason, the homepage will not have a list of employees displayed.
   $.getJSON(bookResourceURI, function (books) {
       console.log(books);
+      var postOrderURI = books[1].link[1].url;
+      console.log("POST ORDER URI: " + postOrderURI);
+      document.cookie = "postOrderURI = " + postOrderURI + ";";
+      var cookieTest = getCookieFunction("postOrderURI");
+      console.log("POST ORDER URI GET COOKIE TEST: " + cookieTest);
+
       for (var i = 0; i < books.length; i++) {
 
           var bookData = {
@@ -47,7 +56,8 @@ $(document).ready(function () {
                   productReview: "" + books[i].productReview,
                   author: "" + books[i].author,
                   isbn: "" + books[i].isbn,
-                  bookLink: "" + books[i].link[0].url
+                  bookLink: "" + books[i].link[0].url,
+                  bookOrderLink: "" + books[i].link[1].url
           };
         //   link = bookData.bookLink
         //   saveToCookie("",link)
@@ -60,6 +70,12 @@ $(document).ready(function () {
       }
 
   });
+
+  // function bookOrderFormRedirect(){
+  //   console.log("Redirect button clicked.");
+  //   document.location.href = "orderBook.html";
+
+  // }
 
   // $("").submit{
 

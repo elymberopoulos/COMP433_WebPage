@@ -1,59 +1,64 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="addbook.css">
-        <link rel="stylesheet" href="background.css">
-        <script src="js/cookieParse.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/addbook.js"></script>
-    </head>
-    <body>
-        <div w3-include-html="navigation.html"></div>
-        <div w3-include-html="footer.html"></div>
 
-        <div style="margin-top:100px"></div>
-        <h3>Add a book to our store</h3>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="addbook.css">
+  <link rel="stylesheet" href="background.css">
+  <script src="js/cookieParse.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/addbook.js"></script>
+</head>
 
-          <form>
-            <div class="container">
-            <label for="bname">Book Name</label>
-            <input type="text" id="ProductName" name="bookname" placeholder="Book Name">
+<body>
+  <div w3-include-html="navigation.html"></div>
+  <div w3-include-html="footer.html"></div>
 
-            <label for="bprice">Book Price</label>
-            <input type="number" id="ProductPrice" name="productprice" min="1" max="200" placeholder="$">
+  <div style="margin-top:100px"></div>
+  <h3>Add a book to our store</h3>
 
-            <label for="breview">Book Review</label>
-            <input type="text" id="ProductReview" name="bookreview" placeholder="Add A Review">
+  <form>
+    <div class="container">
+      <label for="bname">Book Name</label>
+      <input type="text" id="ProductName" name="bookname" placeholder="Book Name">
 
-            <label for="oname">Product Owner</label>
-            <input type="text" id="ProductOwner" name="ownername" placeholder="Product Owner">
+      <label for="bprice">Book Price</label>
+      <input type="number" id="ProductPrice" name="productprice" min="1" max="200" placeholder="$">
 
-            <label for="pid">Product ID</label>
-            <input type="integer" id="ProductID" name="productid" placeholder="Product ID">
+      <label for="breview">Book Review</label>
+      <input type="text" id="ProductReview" name="bookreview" placeholder="Add A Review">
 
-            <label for="isbn">ISBN</label>
-            <input type="integer" id="Isbn" name="isbn" placeholder="ISBN">
+      <label for="oname">Product Owner</label>
+      <input type="text" id="ProductOwner" name="ownername" placeholder="Product Owner">
 
-             <label for="bauthor">Author</label>
-            <input type="text" id="Author" name="author" placeholder="Author Name">
+      <label for="pid">Product ID</label>
+      <input type="integer" id="ProductID" name="productid" placeholder="Product ID">
 
-            <label for="category">Category</label>
-            <select id="Category" name="category">
-              <option value="fiction">Fiction</option>
-              <option value="nonfiction">Non-Fiction</option>
-              <option value="biography">Biography</option>
-            </select>
+      <label for="isbn">ISBN</label>
+      <input type="integer" id="Isbn" name="isbn" placeholder="ISBN">
 
-            <input type="submit" value="Submit">
-          </form>
-        </div>
+      <label for="bauthor">Author</label>
+      <input type="text" id="Author" name="author" placeholder="Author Name">
 
-        <div style="margin-top:250px"></div>
+      <label for="category">Category</label>
+      <select id="Category" name="category">
+        <option value="fiction">Fiction</option>
+        <option value="nonfiction">Non-Fiction</option>
+        <option value="biography">Biography</option>
+      </select>
 
-                <script>includeHTML();</script>
-    </body>
+      <input type="submit" value="Submit">
+  </form>
+  </div>
+
+  <div style="margin-top:250px"></div>
+
+  <script>
+    includeHTML();
+  </script>
+</body>
+
 </html>

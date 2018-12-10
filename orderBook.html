@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="addbook.css">
+    <link rel="stylesheet" href="background.css">
+    <script src="js/cookieParse.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/orderBook.js"></script>
+</head>
+
+<body>
+        <div w3-include-html="navigation.html"></div>
+
+        <div class="page-wrap">
+    <form>
+        <div class="container" style="margin-top:50px">
+            <label for="bname">Enter Book Name You Want To Order</label>
+            <input type="text" id="ProductName" name="bookname" placeholder="Book Name">
+        </div>
+        <input type="submit" value="ORDER BOOK">
+    </form>
+    <script>includeHTML();</script>
+
+</body>

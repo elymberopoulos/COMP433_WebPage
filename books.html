@@ -4,21 +4,20 @@
         <meta charset="utf-8">
         <title>Books</title>
         <link rel="stylesheet" href="books.css">
-        <script src="js/cookieParse.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
         <script src="js/handlebars-v4.0.12.js"></script>
         <script src="js/cookieParse.js"></script>
         <script src="js/main.js"></script>
         <script src="js/books.js"></script>
+
     </head>
     <body>
 
         <div w3-include-html="navigation.html"></div>
-        <div w3-include-html="footer.html"></div>
 
         <div class="page-wrap">
   <h1>Books</h1>
+  <div id = "placeOrderButton">CLICK HERE TO PLACE AN ORDER</div>
   <div id="books-container"></div>
 </div>
 <script id="book-modal-template" type="text/x-handlebars-template">
@@ -35,7 +34,6 @@
         <p class="card-text">{{productReview}}</p>
         <p class="card-text">{{author}}</p>
         <p class="card-text">{{isbn}}</p> -->
-        <a class = "button">view book</a>
 
       </div>
     </div>
@@ -43,7 +41,6 @@
 
 </script>
 <div id = "content">
-
 </div>
 <!-- <script id="booksTemplate" type="text/x-handlebars-template">
 {{#each books}}
