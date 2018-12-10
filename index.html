@@ -1,33 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="background.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>Home</title>
-</head>
-<body>
-     <div w3-include-html="navigation.html"></div>
-     <div w3-include-html="footer.html"></div>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="background.css">
 
-<<div class = "divider" style="margin-top: 250px">
+<style>
+
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 200px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+span {
+    background-color: #f3f3f3;
+}
+
+</style>
+    </head>
+
+    <body>
+        <div w3-include-html="navigation.html"></div>
+        <div w3-include-html="footer.html"></div>
+
+        <div style="margin-top:100px"></div>
+
+<h1 style="text-align:center;"> <span>Register to Lakeshore Marketplace</span></h1>
+
+
+<div class="row" style="text-align:center;">
+  <div class="column" style="background-color:#f2f2f2;">
+      <i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
+    <h2>Register as Customer</h2>
+    <a href="registercustomer.html"> Click here</a>
+  </div>
+  <div class="column" style="background-color:#f9f9f9;">
+      <i class="fa fa-user-circle-o fa-5x" aria-hidden="true"></i>
+
+    <h2>Register as Partner</h2>
+    <a href="registerpartner.html"> Click here</a>
+  </div>
 </div>
 
-<h1 style= "text-align: center;
-color: green;
-text-shadow: 3px 2px black">Lake Shore Market Place</h1>
+<div style="margin-top:150px"></div>
 
-     <!-- The form -->
-<form class="searchbar" action="action_page.php">
-<input type="text" placeholder="Search.." name="search">
-<button type="submit"><i class="fa fa-search"></i></button>
-</form>
-
-
-  <script src="js/main.js"></script>
-  <script>includeHTML();</script>
-</body>
+        <script src="js/main.js"></script>
+        <script>includeHTML();</script>
+    </body>
 </html>
