@@ -1,17 +1,11 @@
 $(document).ready(function () {
 
-    //extract whatever is inside of the script tag with an id of employee-modal-template
-
+    //HARD CODED ENTRY POINT FOR CUSTOMERS
     var customerResourceURI = "http://localhost:8081/customer"
-    //http://localhost:8081/partner
 
-    //submit the add employee form to the server
     $('form').submit(function (event) {
 
-        // /**
-        //  * salary and privilege are not sent to the server since there is no endpoint that accepts those parameters
-        //  * @type {{firstName: *, lastName: *}}
-        //  */
+
         var formData = {
             'userID': getUserID(),
             'firstName': getfirstName(),

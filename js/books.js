@@ -1,29 +1,4 @@
-// var ourRequest = new XMLHttpRequest();
-// ourRequest.open('GET', 'http://localhost:8081/book');
-// ourRequest.onload = function() {
-//   if (ourRequest.status >= 200 && ourRequest.status < 400) {
-//     var data = JSON.parse(ourRequest.responseText);
-//     createHTML(booksdata);
-//   } else {
-//     console.log("We connected to the server, but it returned an error.");
-//   }
-// };
 
-// ourRequest.onerror = function() {
-//   console.log("Connection error");
-// };
-
-// ourRequest.send();
-
-
-// function createHTML(booksData) {
-//   var rawTemplate = document.getElementById("booksTemplate").innerHTML;
-//   var compiledTemplate = Handlebars.compile(rawTemplate);
-//   var ourGeneratedHTML = compiledTemplate(booksData);
-
-//   var bookContainer = document.getElementById("books-container");
-//   booksContainer.innerHTML = ourGeneratedHTML;
-// }
 $(document).ready(function () {
   console.log("ready")
   //extract whatever is inside of the script tag with an id of employee-modal-template
@@ -37,8 +12,6 @@ $(document).ready(function () {
   console.log("BOOKSTORE URI: " + bookResourceURI);
   // var bookResourceURI= "http://localhost:8081/book/"
 
-  //retrieve all the employees from server then display them on the homepage
-  // if server doesn't return any employees for some reason, the homepage will not have a list of employees displayed.
   $.getJSON(bookResourceURI, function (books) {
       console.log(books);
       var postOrderURI = books[0].link[1].url;
