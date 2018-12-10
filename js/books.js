@@ -41,7 +41,7 @@ $(document).ready(function () {
   // if server doesn't return any employees for some reason, the homepage will not have a list of employees displayed.
   $.getJSON(bookResourceURI, function (books) {
       console.log(books);
-      var postOrderURI = books[1].link[1].url;
+      var postOrderURI = books[0].link[1].url;
       console.log("POST ORDER URI: " + postOrderURI);
       document.cookie = "postOrderURI = " + postOrderURI + ";";
       var cookieTest = getCookieFunction("postOrderURI");
